@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -27,6 +29,8 @@ import com.wx.web.validator.NewsValidator;
  */
 @Controller
 public class NewsController {
+
+    private static final Logger log = LoggerFactory.getLogger(NewsController.class);
 
     @Autowired
     private NewsService newsService;
@@ -63,6 +67,7 @@ public class NewsController {
 
     @RequestMapping(value = "/news/list", method = RequestMethod.GET)
     public String search() {
+        log.info("# 进入新闻列表页...");
         return "news/news_list";
     }
 

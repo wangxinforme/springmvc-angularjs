@@ -28,7 +28,7 @@ import com.wx.common.base.pagination.Dialect.DialectType;
 /**
  * 分页拦截器
  */
-@Intercepts({ @Signature(type = StatementHandler.class, method = "prepare", args = { Connection.class }) })
+@Intercepts({ @Signature(type = StatementHandler.class, method = "prepare", args = { Connection.class, Integer.class }) })
 public class PageInterceptor implements Interceptor {
 
     /** 数据库方言对应的实现类路径 */
