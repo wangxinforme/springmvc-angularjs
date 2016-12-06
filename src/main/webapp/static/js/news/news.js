@@ -41,7 +41,7 @@
       event.stopPropagation();
       if (news.checkAll()) {
         $(this).prop("disabled", "disabled");
-        $("#newsForm").submit();
+        $("#mewsCommand").submit();
       }
     });
   };
